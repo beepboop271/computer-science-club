@@ -4,9 +4,9 @@
 
 ## Exercises
 
-1. Create a [GitHub](https://github.com/) account, or don't.
+1. Create a [GitHub](https://github.com/) account.
 
-2. Clone [this repository](https://github.com/beepboop271/computer-science-club.git) using `git`, [Github Desktop](https://desktop.github.com/), or any other similar method (don't download as zip, because then every time I update this repository, you won't be able to sync my changes unless you re-download the zip again).
+2. Fork [this repository](https://github.com/beepboop271/computer-science-club), and clone your fork using `git`, [Github Desktop](https://desktop.github.com/), or any other similar method (don't download as zip, because then every time I update this repository, you won't be able to sync my changes unless you re-download the zip again).
 
 3. If you don't already have it, install [Python](https://www.python.org/downloads/) (version 3.6 or greater).
 
