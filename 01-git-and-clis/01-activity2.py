@@ -21,15 +21,19 @@ parser.add_argument(
 )
 parser.add_argument(
     "string_arg", type=str,
-    help="A string argument which must be equal to (without first space): Hel$lo'\", W\\orld!"
+    help="A string argument which must be equal to \"Hello, World!\""
 )
 parser.add_argument(
     "numeric_arg", type=int,
     help="An integer argument which must be any even integer"
 )
 parser.add_argument(
+    "relative_file", type=str,
+    help="A string argument which must be the path to the file 01-activity1.py, using a relative path with no periods"
+)
+parser.add_argument(
     "relative_current_path", type=str,
-    help="A string argument which must be the path to the file 01-activity1.py, using a relative path"
+    help="A string argument which must be the path to the file 01-activity1.py, using a relative path with a period"
 )
 parser.add_argument(
     "relative_previous_path", type=str,
@@ -64,7 +68,7 @@ check(
     args.g, "flag (g)"
 )
 check(
-    lambda x: x == "Hel$lo'\", W\\orld!",
+    lambda x: x == "Hello, World!",
     args.string_arg, "string_arg"
 )
 check(
@@ -76,6 +80,16 @@ check(
         os.path.isfile(x)
         and (not os.path.isabs(x))
         and (os.path.basename(x) == "01-activity1.py")
+        and ("." not in x.rsplit(".", 1)[0])
+    ),
+    args.relative_file, "relative_file"
+)
+check(
+    lambda x: (
+        os.path.isfile(x)
+        and (not os.path.isabs(x))
+        and (os.path.basename(x) == "01-activity1.py")
+        and ("." in x.rsplit(".", 1)[0])
     ),
     args.relative_current_path, "relative_current_path"
 )
@@ -102,6 +116,6 @@ alphabet = list("abcdefghijklmnopqrstuvwxyz")
 
 for i in range(10000):
     if i == line:
-        print("good job!", random.randint(100000, 999999))
+        print("good job!aaaaaaaaaaaaaaaaaaaaaa", random.randint(100000, 999999))
     random.shuffle(alphabet)
     print("wow!", "".join(alphabet), random.randint(100000, 999999))
