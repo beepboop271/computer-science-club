@@ -6,13 +6,15 @@
 
 - Git and GitHub
 - Terminals and command line interfaces
-- Environment variables, pipenv
+- Environment variables
 
 ### Advanced Functions
 
 - Functions as variables
 - Higher order functions
 - Closure
+- Anonymous functions
+- `*args` and `**kwargs`
 - Decorators
 
 ## From Waiting to `await`ing
