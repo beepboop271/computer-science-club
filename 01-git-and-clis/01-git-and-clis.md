@@ -153,9 +153,32 @@ In general (this whole section is just in general over and over again), when rea
 
 In general, a single hyphen refers to a short form name of an argument, while two refers to the full name.
 
+In addition to commands that you can specify by name, you can run any executable by writing the path to the executable file as the command name, then space separated arguments like usual.
+
+You can use a relative or absolute path, however there is one exception. You can use any path, except for just the name of the executable by itself (i.e. running it from the directory that the executable is in). You must write `./filename` instead of `filename` to run the executable.
+
 ## Environment Variables
 
-? is there enough time
+Environment variables are just string variables stored at the OS level. In Windows, there are system variables, user variables, and process variables.
+
+When you set a system environment variable, every process (program) launched will be able to access that variable. In Python, you can use `os.getenv` from the `os` standard library module, and in command lines you can do `echo $VARIABLE_NAME` on linux and `echo $Env:VARIABLE_NAME` on powershell, and `echo %VARIABLE_NAME%` on cmd.
+
+When you set a user variable, every process launched as that user will be able to access that variable in the same ways.
+
+When you set a process variable, only the process which set the variable and all child processes of that process can access the variable (in the same ways as above). You can try this by opening powershell and writing:
+
+```text
+PS > $Env:EXAMPLE_VAR = "hello"
+PS > start powershell
+```
+
+A new window of powershell will launch and if you run `echo $Env:EXAMPLE_VAR` it will print `hello`. However, if you launch powershell through some other method, nothing will be printed.
+
+The most important environment variable is probably the `PATH` variable. The `PATH` variable is the only reason why you can type commands by name and not by specifying the full path of the executable.
+
+When you type a command like `python` or `ls`, the way that the OS determines what executable file to run without you specifying the full path is that it looks at the value of the `PATH` system variable. The `PATH` variable contains a list of absolute directory paths, and the OS will search through each directory specified by `PATH` (in the order that the folders are specified), and once it finds a directory containing an executable file with the name requested, it is run.
+
+On Windows, often programs like Java and Python modify the system `PATH` variable to add the install directories of the program, so that you can use commands `java` and `python`. However, if they somehow didn't modify the `PATH`, or if you want to be able to run some other program from anywhere, you can modify the `PATH` variable yourself. On Linux, many packages you install will add an executable to a folder that is specified in the path instead of adding a new folder path to the `PATH`.
 
 ## Exercises
 
