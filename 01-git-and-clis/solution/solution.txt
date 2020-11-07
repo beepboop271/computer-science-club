@@ -1,7 +1,0 @@
-6.
-python -i 01-activity1.py
->>> s
-
-7. (example solutions: the last argument must be a file on your computer)
-python 01-activity2.py -eg "Hello, World!" 2 01-activity1.py ./01-activity1.py ../outline.md C:/Users/beepboop/asdf.txt | findstr good
-python 01-activity2.py -eg "Hello, World!" 2 01-activity1.py ./01-activity1.py ../outline.md /home/beepboop/asdf.txt | grep good
