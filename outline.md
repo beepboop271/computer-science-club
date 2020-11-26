@@ -24,13 +24,10 @@
 - IP addresses and ports, clients and servers
 - Sockets (echo, tic-tac-toe)
 
-### A Classic Solution
+### Concurrency and Parallelism
 
 - Threads and locking
 - Callbacks
-
-### Concurrency and Parallelism
-
 - Event loop and workers
 - Implement an event loop?
 
