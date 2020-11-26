@@ -2,7 +2,6 @@ import os
 import socket
 
 import dotenv
-
 dotenv.load_dotenv()
 
 # creates a socket with default settings and type,

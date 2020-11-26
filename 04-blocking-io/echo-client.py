@@ -2,7 +2,6 @@ import os
 import socket
 
 import dotenv
-
 dotenv.load_dotenv()
 
 # create and connect in one go - not much simpler than
