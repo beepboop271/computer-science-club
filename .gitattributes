@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# show markdown files on github language breakdown
+*.md linguist-detectable
