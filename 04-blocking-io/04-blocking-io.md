@@ -172,7 +172,7 @@ while 1:
     sock.send(data)
 ```
 
-This is because `sock.accept`, `sock.recv`, and `sock.send` (in their default modes) are all considered to be something called a blocking operation. `sock.connect` is also blocking, bind and listen are also probably blocking, but connect, bind, and listen are only used once in a program so we won't talk about them too much.
+This is because `sock.accept`, `sock.recv`, and `sock.send` (in their default modes) are all considered to be something called a blocking operation. `sock.connect`, bind and listen are also blocking, but connect, bind, and listen are only used once in a program so we won't talk about them too much.
 
 Bringing back this text diagram from last lesson, we can investigate what is happening.
 
@@ -209,7 +209,7 @@ while 1:
     print("".join(data))
 ```
 
-This server accepts a connection and continues receiving data until the characters `"done"` appear in the data somewhere. This could take a while. The byte and string processing code runs fairly quickly, but the `recv` call could eat up minutes of time. Since a client can only establish a connection with the server once the server calls `sock.accept`, a client could be waiting for an unknown amount of time until the server is done with the current client.
+This server accepts a connection and continues receiving data until the characters `"done"` appear in the data somewhere (ignore the fact that the code wouldn't work if `"done"` was split up across two `recv` calls). This could take a while. The byte and string processing code runs fairly quickly, but the `recv` call could eat up minutes of time, since we need to wait at `recv` until some data is sent from the client. Since a new client can only establish a connection with the server once the server calls `sock.accept`, a client could be waiting for an unknown amount of time until the server is done with the current client.
 
 That means this server code can handle *one* concurrent user. How can we handle 1000? 10000? 100000? or 1000000? We shall see...
 
