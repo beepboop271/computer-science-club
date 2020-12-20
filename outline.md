@@ -26,22 +26,20 @@
 
 ### Concurrency and Parallelism
 
-- Threads and locking
+- Threading IO
 - Callbacks
-- Event loop and workers
-- Implement an event loop?
+- Selecting IO, event loop
 
 ### Switching Up the Language
 
-- Javascript (Typescript) with node.js, introduced with discord bots?
-- Concurrency in js: callbacks, promises, async/await
+- Javascript (Typescript) with Node.js, introduced with Discord bots?
+- Concurrency in JS: callbacks, promises, async/await
 
 ## Getting Real Work Done
 
 ### Networking Redux
 
-- The networking stack
-- Http
+- HTTP
 
 ### Express and Flask
 
@@ -49,8 +47,8 @@
 
 ### Storing Data
 
-- Why databases?, relational: sql, document: firestore
-- Cache/in-memory/key-value: redis
+- Why databases?, relational: SQL, document: Firestore
+- Cache/in-memory/key-value: Redis
 
 ### Using Services from Other People
 
