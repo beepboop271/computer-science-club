@@ -1,5 +1,7 @@
 # Git and Command Line Interfaces
 
+Screenshots are my own, taken on [http://git-school.github.io/visualizing-git/](http://git-school.github.io/visualizing-git/).
+
 ## Git
 
 In a sentence: Git tracks all changes made to a codebase and allows for programming in a non-linear asynchronous way.
